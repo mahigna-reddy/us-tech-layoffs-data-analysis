@@ -1,27 +1,16 @@
 # US Tech Layoffs Data Analysis & Data Quality Validation
 
-This project analyzes US tech layoffs data using Python, Pandas, Matplotlib, and Seaborn.
-It focuses not only on exploratory data analysis, but also on data quality validation and data cleaning before generating insights.
+This project analyzes tech layoffs data using Python and focuses on both **data analysis** and **data quality validation**.
 
-The goal of this project is to demonstrate how raw business data can be validated, cleaned, analyzed, visualized, and summarized in a professional data analysis workflow.
+The goal is to show how raw data can be validated, cleaned, analyzed, visualized, and summarized before generating business insights.
 
 ## Project Objective
 
-The objective of this project is to analyze layoffs trends across companies, industries, locations, and time periods while applying data quality checks to ensure the insights are reliable.
-
-## Dataset
-
-The dataset contains technology layoff records with fields such as:
-
-* Company
-* Location
-* Industry
-* Total laid off
-* Percentage laid off
-* Date
-* Company stage
-* Country
-* Funds raised
+* Validate raw layoffs data for quality issues
+* Clean and prepare the dataset for analysis
+* Analyze layoffs by company, industry, location, and time period
+* Generate visual charts and summary reports
+* Create an automated validation report with PASS, WARNING, and FAIL results
 
 ## Tech Stack
 
@@ -31,7 +20,7 @@ The dataset contains technology layoff records with fields such as:
 * Matplotlib
 * Seaborn
 * GitHub
-* IntelliJ IDEA / Terminal
+* Terminal / IntelliJ IDEA
 
 ## Project Structure
 
@@ -39,96 +28,87 @@ The dataset contains technology layoff records with fields such as:
 us-tech-layoffs-data-analysis
 ├── data
 │   ├── raw
-│   │   └── layoffs.csv
 │   └── cleaned
-│       └── cleaned_layoffs.csv
 ├── reports
-│   └── layoffs_summary_report.txt
+│   ├── layoffs_summary_report.txt
+│   └── data_validation_report.txt
 ├── src
 │   ├── data_quality_checks.py
 │   ├── data_cleaning.py
 │   ├── exploratory_analysis.py
-│   └── generate_summary_report.py
+│   ├── trend_analysis.py
+│   ├── generate_summary_report.py
+│   └── generate_data_validation_report.py
 ├── visuals
-│   ├── top_companies_by_layoffs.png
-│   ├── top_industries_by_layoffs.png
-│   ├── layoffs_trend_by_year.png
-│   └── top_locations_by_layoffs.png
 ├── requirements.txt
 ├── .gitignore
 └── README.md
 ```
 
-## Data Quality Checks
+## What This Project Does
 
-The project includes data quality validation before analysis. The checks include:
+### Data Quality Checks
 
-* Dataset shape validation
-* Column validation
-* Missing value analysis
-* Duplicate record detection
-* Negative layoff count validation
-* Invalid percentage validation
-* Invalid or missing date validation
+The project validates:
 
-## Data Cleaning Steps
+* Required columns
+* Missing values
+* Duplicate records
+* Invalid dates
+* Negative layoff values
+* Invalid percentage values
+* Cleaned file generation
+* Visual file generation
 
-The cleaning script performs the following steps:
+### Data Cleaning
+
+The cleaning script:
 
 * Removes duplicate records
 * Standardizes text columns
-* Converts date values into proper datetime format
-* Converts numeric fields into valid numeric data types
-* Creates year, month, and year-month columns for trend analysis
-* Saves the cleaned dataset into `data/cleaned/cleaned_layoffs.csv`
+* Converts date and numeric fields
+* Creates year, month, and year-month columns
+* Saves the cleaned dataset
 
-## Exploratory Data Analysis
+### Analysis and Visualizations
 
-The analysis focuses on:
+The project analyzes:
 
-* Top companies by total layoffs
-* Top industries impacted by layoffs
-* Layoff trends by year
-* Top locations by layoffs
-* Business-level summary insights
+* Top companies by layoffs
+* Top industries impacted
+* Top locations impacted
+* Layoffs trend by year
+* Monthly layoffs trend
+* Industry-wise and location-wise trends
+
+Charts are saved in the `visuals` folder.
+
+### Reports Generated
+
+The project generates:
+
+* `layoffs_summary_report.txt`
+* `data_validation_report.txt`
+
+The data validation report shows:
+
+* Total checks executed: 8
+* Passed checks: 5
+* Warnings: 3
+* Failed checks: 0
 
 ## Key Insights
 
-Based on the cleaned dataset:
+From the cleaned dataset:
 
 * Total layoffs recorded: 383,659
-* Total unique companies: 1,890
-* Total industries impacted: 32
-* Date range analyzed: 2020-03-11 to 2023-03-06
-* Top companies by layoffs include Amazon, Google, Meta, Salesforce, and Microsoft
-* Top impacted industries include Consumer, Retail, Other, Transportation, and Finance
+* Unique companies analyzed: 1,890
+* Industries impacted: 32
+* Date range: 2020-03-11 to 2023-03-06
+* Top companies include Amazon, Google, Meta, Salesforce, and Microsoft
+* Top industries include Consumer, Retail, Other, Transportation, and Finance
 
-## Visualizations
-
-The project generates visual charts and saves them in the `visuals` folder:
-
-* Top 10 Companies by Total Layoffs
-* Top 10 Industries by Total Layoffs
-* Layoffs Trend by Year
-* Top 10 Locations by Total Layoffs
-
-## Summary Report
-
-A business summary report is generated and saved at:
-
-```text
-reports/layoffs_summary_report.txt
-```
-
-The report includes:
-
-* Overall dataset summary
-* Top companies by layoffs
-* Top industries by layoffs
-* Top locations by layoffs
-* Business observations
-
-## How to Run the Project
+## How to Run
 
 Install dependencies:
 
@@ -148,10 +128,16 @@ Run data cleaning:
 python3 src/data_cleaning.py
 ```
 
-Run exploratory analysis and generate visuals:
+Run exploratory analysis:
 
 ```bash
 python3 src/exploratory_analysis.py
+```
+
+Run trend analysis:
+
+```bash
+python3 src/trend_analysis.py
 ```
 
 Generate summary report:
@@ -160,29 +146,25 @@ Generate summary report:
 python3 src/generate_summary_report.py
 ```
 
-## What I Practiced
+Generate data validation report:
 
-Through this project, I practiced:
+```bash
+python3 src/generate_data_validation_report.py
+```
 
-* Loading and analyzing CSV data using Pandas
-* Performing data quality checks before analysis
-* Cleaning and transforming raw data
-* Handling missing values, duplicates, invalid dates, and numeric conversions
-* Creating reusable Python scripts for different stages of the workflow
-* Generating visual charts using Matplotlib and Seaborn
-* Creating a business summary report from cleaned data
-* Organizing a data analysis project in a GitHub-friendly structure
+## Why This Project Matters
+
+In real-world analysis, raw data should not be used directly without validation. This project demonstrates a structured workflow where data is first validated, cleaned, analyzed, visualized, and then summarized.
+
+It is useful for QA, SDET, Data QA, and data-focused candidates who want to understand how data quality and analysis work together.
 
 ## Future Enhancements
 
-Planned improvements for this project:
-
 * Add notebook-based analysis
-* Add more advanced visualizations
-* Add location-wise and industry-wise trend analysis
-* Add automated data validation report
 * Add Power BI or Tableau dashboard
 * Add unit tests for data quality checks
+* Add SQL-based analysis
+* Add GitHub Actions workflow
 
 ## Author
 
