@@ -1,0 +1,36 @@
+DATA VALIDATION REPORT
+==================================================
+
+Total checks executed: 8
+Passed checks: 5
+Warnings: 3
+Failed checks: 0
+
+Validation Results:
+--------------------------------------------------
+PASS: Required columns validation
+Details: All required columns are present.
+
+WARNING: Duplicate records validation
+Details: Duplicate records found: 5
+
+WARNING: Missing values validation
+Details: Missing values found - industry: 4, total_laid_off: 740, percentage_laid_off: 785, date: 1, stage: 6, funds_raised_millions: 209
+
+PASS: Negative layoff values validation
+Details: No negative layoff values found.
+
+PASS: Percentage range validation
+Details: All percentage values are within valid range.
+
+WARNING: Date validation
+Details: Invalid or missing dates found: 1
+
+PASS: Cleaned file validation
+Details: Cleaned dataset file exists.
+
+PASS: Visual files validation
+Details: All expected visual files exist.
+
+Report Summary:
+No critical failures found. Warnings were identified and should be reviewed.
