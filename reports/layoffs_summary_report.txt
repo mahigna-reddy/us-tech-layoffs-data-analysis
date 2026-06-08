@@ -1,0 +1,36 @@
+US TECH LAYOFFS DATA ANALYSIS SUMMARY REPORT
+=======================================================
+
+Total layoffs recorded: 383,659
+Total unique companies: 1890
+Total industries impacted: 32
+Date range: 2020-03-11 to 2023-03-06
+
+Top 5 companies by layoffs:
+- Amazon: 18,150
+- Google: 12,000
+- Meta: 11,000
+- Salesforce: 10,090
+- Microsoft: 10,000
+
+Top 5 industries by layoffs:
+- Consumer: 44,782
+- Retail: 43,613
+- Other: 36,289
+- Transportation: 31,248
+- Finance: 28,344
+
+Top 5 locations by layoffs:
+- SF Bay Area: 125,631
+- Seattle: 34,743
+- New York City: 29,364
+- Bengaluru: 21,787
+- Amsterdam: 17,140
+
+Business observations:
+- Layoffs were concentrated among large technology companies and consumer-facing industries.
+- The dataset shows significant impact across multiple industries and locations.
+- Data quality validation was performed before analysis to identify duplicates, missing values, and invalid records.
+- Cleaned data was used for analysis to improve reliability of insights.
+
+Report generated from cleaned layoffs dataset.
